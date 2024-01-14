@@ -243,6 +243,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6265776187016570482, guid: bfff06aaff363a847ad37bf592364e6b, type: 3}
+--- !u!1 &338031614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1652955675002962, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
+  m_PrefabInstance: {fileID: 1486294279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &338031616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338031614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff5de754ffa3cc44929eadfe374df59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fpCamera: {fileID: 448049642}
+  _muzzleFlashPS: {fileID: 0}
+  _hitImpactPS: {fileID: 0}
+  _range: 100
+  _damage: 38
 --- !u!1 &356027890
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +529,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2093637950428003362, guid: e5d7b87d422ee0f478ee09eb32e24f4e, type: 3}
   m_PrefabInstance: {fileID: 379719202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &448049642 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1421114157751455561, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
+  m_PrefabInstance: {fileID: 1486294279}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &455607573
 PrefabInstance:
@@ -1264,6 +1291,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8966311043270599953, guid: 79e624e6a8770a946afb866fd94b394b, type: 3}
   m_PrefabInstance: {fileID: 1040395410}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1047261288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1571873487869096222, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
+  m_PrefabInstance: {fileID: 1486294279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1047261289 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1571873487869259070, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
+  m_PrefabInstance: {fileID: 1486294279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1047261290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047261288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff5de754ffa3cc44929eadfe374df59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fpCamera: {fileID: 448049642}
+  _muzzleFlashPS: {fileID: 1349393718}
+  _hitImpactPS: {fileID: 8897547815180463855, guid: 10a125d82ff0998439e5235b1bd99100, type: 3}
+  _range: 100
+  _damage: 38
 --- !u!1 &1089069080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d2f0da3998423f44594868ffed55c3e6, type: 3}
@@ -1488,6 +1542,90 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f0da3998423f44594868ffed55c3e6, type: 3}
+--- !u!1001 &1349393717
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1047261289}
+    m_Modifications:
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630150, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744199306731630203, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+      propertyPath: m_Name
+      value: Muzzle_Flash_PS
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+--- !u!198 &1349393718 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 744199306731630149, guid: a4625ffb2a5f57e4f8b6454a245663cf, type: 3}
+  m_PrefabInstance: {fileID: 1349393717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1407162595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161991985, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
+  m_PrefabInstance: {fileID: 1486294279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1407162599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407162595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff5de754ffa3cc44929eadfe374df59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fpCamera: {fileID: 448049642}
+  _muzzleFlashPS: {fileID: 0}
+  _hitImpactPS: {fileID: 0}
+  _range: 100
+  _damage: 38
 --- !u!1001 &1457800372
 PrefabInstance:
   m_ObjectHideFlags: 0
