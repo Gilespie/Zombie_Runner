@@ -1,35 +1,50 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private Camera _fpCamera;
+    [SerializeField] private Ammo _ammo;
+
+    [Header("ShootSFX")]
     [SerializeField] private ParticleSystem _muzzleFlashPS;
+    [SerializeField] private AudioClip _audioClip;
 
     [Header("Decals")]
     [SerializeField] private GameObject _hitImpactPS;
     [SerializeField] private float _delayToDelete = 15f;
-    
+
+    [Header("Settings")]
     [SerializeField] private float _range = 100f;
-    [SerializeField] private float _damage = 38f;
+    [SerializeField] private float _damage = 15f;
+    [SerializeField] private float _delayBetweenShots = 0.5f;
 
-    private void Start()
-    {
-
-    }
+    private bool _canShoot = true;
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        Debug.DrawRay(_fpCamera.transform.position, _fpCamera.transform.forward * _range, Color.green);
+        if(Input.GetMouseButtonDown(0) && _canShoot == true)
         {
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
 
-    private void Shoot()
+    private IEnumerator Shoot()
     {
-        PlayMuzzleFlash();
-        ProcessRaycast();
+        _canShoot = false;
+
+        if (_ammo.GetCurrentAmmo() != 0)
+        {
+            _ammo.DecreaseCurrentAmmo();
+            PlayMuzzleFlash();
+            ProcessRaycast();
+        }
+
+        yield return new WaitForSeconds(_delayBetweenShots);
+
+        _canShoot = true;
     }
 
     private void PlayMuzzleFlash()

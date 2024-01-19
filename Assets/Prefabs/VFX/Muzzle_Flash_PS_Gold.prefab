@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 744199306731630149}
   - component: {fileID: 744199306731630148}
   m_Layer: 0
-  m_Name: Muzzle_Flash_PS
+  m_Name: Muzzle_Flash_PS_Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

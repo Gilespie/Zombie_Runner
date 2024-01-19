@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7359604550684266359}
   - component: {fileID: 7359604550684266356}
   m_Layer: 0
-  m_Name: Muzzle_Flash_Light
+  m_Name: Muzzle_Flash_Light_Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

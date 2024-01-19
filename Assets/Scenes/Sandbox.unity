@@ -5325,29 +5325,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7718662893383318277, guid: d2f0da3998423f44594868ffed55c3e6, type: 3}
---- !u!1 &1362585256 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 635969280953771139, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
-  m_PrefabInstance: {fileID: 1486294279}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1362585257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1362585256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0429b6cf9406ee543afd006928aacd48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 1488920772}
-  _aimFOV: 35
-  _mainFOV: 70
-  _zoomSpeed: 10
-  _aimFOVSensitivity: 0.4
-  _mainFOVSensitivity: 2
 --- !u!1001 &1398153593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5906,22 +5883,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 338031616, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
-      propertyPath: _damage
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1047261290, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
-      propertyPath: _damage
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 1362585258, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
       propertyPath: _gameOverCanvas
       value: 
       objectReference: {fileID: 290862353}
-    - target: {fileID: 1407162599, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
-      propertyPath: _damage
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 259161614941371961, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5970,39 +5935,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 635969280953771151, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1252453600075775986, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
-      propertyPath: m_Lens.FieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 1421114157751455561, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
-      propertyPath: field of view
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 1421114157751455561, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
       propertyPath: near clip plane
       value: 0.001
       objectReference: {fileID: 0}
-    - target: {fileID: 1421114157751455566, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.20000076
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
---- !u!114 &1488920772 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1252453600075775986, guid: 2579e659f1f84e847a81549e2cb79fd7, type: 3}
-  m_PrefabInstance: {fileID: 1486294279}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1503351888
 PrefabInstance:
   m_ObjectHideFlags: 0
