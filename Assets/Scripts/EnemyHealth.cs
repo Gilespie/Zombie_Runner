@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        BroadcastMessage("OnDamageTaken");
         _currentHitPoints -= Mathf.Abs(amount);
 
         if(_currentHitPoints <= 0)

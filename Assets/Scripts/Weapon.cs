@@ -5,13 +5,17 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] private Camera _fpCamera;
     [SerializeField] private ParticleSystem _muzzleFlashPS;
+
+    [Header("Decals")]
     [SerializeField] private GameObject _hitImpactPS;
+    [SerializeField] private float _delayToDelete = 15f;
+    
     [SerializeField] private float _range = 100f;
     [SerializeField] private float _damage = 38f;
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
@@ -46,7 +50,6 @@ public class Weapon : MonoBehaviour
             {
                 target.TakeDamage(_damage);
             }
-
         }
         else
         {
@@ -60,7 +63,7 @@ public class Weapon : MonoBehaviour
         {
             GameObject impactFX = Instantiate(_hitImpactPS, hit.point, Quaternion.LookRotation(hit.normal));
             
-            Destroy(impactFX, 1f);
+            Destroy(impactFX, _delayToDelete);
         }
     }
 }
