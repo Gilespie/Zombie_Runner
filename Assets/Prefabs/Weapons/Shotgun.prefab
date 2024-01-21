@@ -291,8 +291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff5de754ffa3cc44929eadfe374df59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fpCamera: {fileID: 0}
+  _fpsCamera: {fileID: 0}
   _ammo: {fileID: 0}
+  _ammoType: 1
   _muzzleFlashPS: {fileID: 1410509933816949922}
   _audioClip: {fileID: 0}
   _hitImpactPS: {fileID: 8897547815180463855, guid: 10a125d82ff0998439e5235b1bd99100, type: 3}

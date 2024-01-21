@@ -1,5 +1,116 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &292967759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 292967760}
+  - component: {fileID: 292967761}
+  - component: {fileID: 292967762}
+  m_Layer: 0
+  m_Name: Flash Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &292967760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292967759}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1421114157751455566}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &292967761
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292967759}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 0.82452834, g: 1, b: 0.96331763, a: 1}
+  m_Intensity: 1
+  m_Range: 30
+  m_SpotAngle: 70
+  m_InnerSpotAngle: 7
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &292967762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292967759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf1e012f72279b45873377d69549fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lightAngle: 70
+  _minimumAngle: 40
+  _intensityDecay: 0.01
+  _angleDecay: 0.5
+  _lightIntensity: 1
 --- !u!1 &1767060743
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ddf95e2acceb54cbf7485ac172c225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentIndex: 0
+  _currentWeaponIndex: 0
 --- !u!1 &635969280953771139
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +418,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff36c3a953ff457469ee70f91c48c360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammoCountMax: 10
+  _ammoSlots:
+  - AmmoType: 0
+    AmmoAmount: 15
+  - AmmoType: 1
+    AmmoAmount: 8
+  - AmmoType: 2
+    AmmoAmount: 10
 --- !u!1 &1252453600075775500
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +607,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1767060744}
+  - {fileID: 292967760}
   m_Father: {fileID: 259161614941371961}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -769,7 +887,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7228208170235168965}
     - target: {fileID: 3856591869803399755, guid: a04cf3a02ffcd9c4cb710ba3a626b28b, type: 3}
+      propertyPath: _ammoSlot
+      value: 
+      objectReference: {fileID: 7228208170235168965}
+    - target: {fileID: 3856591869803399755, guid: a04cf3a02ffcd9c4cb710ba3a626b28b, type: 3}
       propertyPath: _fpCamera
+      value: 
+      objectReference: {fileID: 1421114157751455561}
+    - target: {fileID: 3856591869803399755, guid: a04cf3a02ffcd9c4cb710ba3a626b28b, type: 3}
+      propertyPath: _fpsCamera
       value: 
       objectReference: {fileID: 1421114157751455561}
     m_RemovedComponents:
@@ -864,7 +990,15 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6931284105751270397, guid: 80b990ec8b22efb409ebce83c89330c6, type: 3}
+      propertyPath: _ammoSlot
+      value: 
+      objectReference: {fileID: 7228208170235168965}
+    - target: {fileID: 6931284105751270397, guid: 80b990ec8b22efb409ebce83c89330c6, type: 3}
       propertyPath: _fpCamera
+      value: 
+      objectReference: {fileID: 1421114157751455561}
+    - target: {fileID: 6931284105751270397, guid: 80b990ec8b22efb409ebce83c89330c6, type: 3}
+      propertyPath: _fpsCamera
       value: 
       objectReference: {fileID: 1421114157751455561}
     - target: {fileID: 6931284105751270397, guid: 80b990ec8b22efb409ebce83c89330c6, type: 3}
@@ -886,11 +1020,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2841789926151506130, guid: 80b990ec8b22efb409ebce83c89330c6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 80b990ec8b22efb409ebce83c89330c6, type: 3}
---- !u!198 &8332782343146818399 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1410509933816949922, guid: 80b990ec8b22efb409ebce83c89330c6, type: 3}
-  m_PrefabInstance: {fileID: 6931284105551702013}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4781551660414252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6926574574050595537, guid: 80b990ec8b22efb409ebce83c89330c6, type: 3}
@@ -899,6 +1028,11 @@ Transform:
 --- !u!1 &1652955675002962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6932448786777042863, guid: 80b990ec8b22efb409ebce83c89330c6, type: 3}
+  m_PrefabInstance: {fileID: 6931284105551702013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8332782343146818399 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1410509933816949922, guid: 80b990ec8b22efb409ebce83c89330c6, type: 3}
   m_PrefabInstance: {fileID: 6931284105551702013}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1040426689
@@ -983,6 +1117,11 @@ PrefabInstance:
     - {fileID: -8185352460608884272, guid: 0b5f8033870ba9749b39d1fed5e502e8, type: 3}
     - {fileID: 1773912865567151391, guid: 0b5f8033870ba9749b39d1fed5e502e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b5f8033870ba9749b39d1fed5e502e8, type: 3}
+--- !u!4 &1162282079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8445619383056733075, guid: 0b5f8033870ba9749b39d1fed5e502e8, type: 3}
+  m_PrefabInstance: {fileID: 8445619384177072076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &503035891500518595 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8345163989729024783, guid: 0b5f8033870ba9749b39d1fed5e502e8, type: 3}
@@ -991,11 +1130,6 @@ ParticleSystem:
 --- !u!1 &1161991985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8445619383057088765, guid: 0b5f8033870ba9749b39d1fed5e502e8, type: 3}
-  m_PrefabInstance: {fileID: 8445619384177072076}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1162282079 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8445619383056733075, guid: 0b5f8033870ba9749b39d1fed5e502e8, type: 3}
   m_PrefabInstance: {fileID: 8445619384177072076}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &209989087
@@ -1029,8 +1163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff5de754ffa3cc44929eadfe374df59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fpCamera: {fileID: 1421114157751455561}
-  _ammo: {fileID: 7228208170235168965}
+  _fpsCamera: {fileID: 1421114157751455561}
+  _ammoSlot: {fileID: 7228208170235168965}
+  _ammoType: 2
   _muzzleFlashPS: {fileID: 503035891500518595}
   _audioClip: {fileID: 0}
   _hitImpactPS: {fileID: 8897547815180463855, guid: 10a125d82ff0998439e5235b1bd99100, type: 3}

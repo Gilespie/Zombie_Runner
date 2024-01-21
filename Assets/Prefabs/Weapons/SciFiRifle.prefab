@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8445619383056733075}
   - component: {fileID: 8445619383060228975}
   - component: {fileID: 8445619383059150861}
-  - component: {fileID: 1773912865567151391}
   - component: {fileID: -8185352460608884272}
+  - component: {fileID: 1773912865567151391}
   m_Layer: 0
   m_Name: SciFiRifle
   m_TagString: Untagged
@@ -84,27 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1773912865567151391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8445619383057088765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ff5de754ffa3cc44929eadfe374df59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fpCamera: {fileID: 0}
-  _ammo: {fileID: 0}
-  _muzzleFlashPS: {fileID: 8345163989729024783}
-  _audioClip: {fileID: 0}
-  _hitImpactPS: {fileID: 8897547815180463855, guid: 10a125d82ff0998439e5235b1bd99100, type: 3}
-  _delayToDelete: 15
-  _range: 100
-  _damage: 30
-  _delayBetweenShots: 1.5
 --- !u!114 &-8185352460608884272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +103,28 @@ MonoBehaviour:
   _zoomSpeed: 5
   _aimFOVSensitivity: 0.5
   _mainFOVSensitivity: 2
+--- !u!114 &1773912865567151391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8445619383057088765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff5de754ffa3cc44929eadfe374df59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fpsCamera: {fileID: 0}
+  _ammoSlot: {fileID: 0}
+  _ammoType: 2
+  _muzzleFlashPS: {fileID: 8345163989729024783}
+  _audioClip: {fileID: 0}
+  _hitImpactPS: {fileID: 8897547815180463855, guid: 10a125d82ff0998439e5235b1bd99100, type: 3}
+  _delayToDelete: 15
+  _range: 100
+  _damage: 30
+  _delayBetweenShots: 1.5
 --- !u!1001 &8762904524508280138
 PrefabInstance:
   m_ObjectHideFlags: 0

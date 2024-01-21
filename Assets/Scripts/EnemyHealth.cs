@@ -4,6 +4,12 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float _maxHitPoints = 100;
     private float _currentHitPoints;
+    private bool _isDead = false;
+
+    public bool IsDead()
+    {
+        return _isDead;
+    }
 
     private void Start()
     {
@@ -12,13 +18,22 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        if (_currentHitPoints == 0) return;
+
         BroadcastMessage("OnDamageTaken");
         _currentHitPoints -= Mathf.Abs(amount);
 
         if(_currentHitPoints <= 0)
         {
-            _currentHitPoints = 0;
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        if(_isDead) return;
+
+        _isDead = true;
+        GetComponent<Animator>().SetTrigger("Die");
     }
 }

@@ -20,6 +20,11 @@ public class WeaponZoom : MonoBehaviour
     private bool _isZoomed = false;
     private float _deadZone = 0.1f;
 
+    private void OnDisable()
+    {
+        _isZoomed = false;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(1))

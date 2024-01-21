@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private Camera _fpCamera;
-    [SerializeField] private Ammo _ammo;
+    [SerializeField] private Camera _fpsCamera;
+    [SerializeField] private Ammo _ammoSlot;
+    [SerializeField] private AmmoType _ammoType;
 
     [Header("ShootSFX")]
     [SerializeField] private ParticleSystem _muzzleFlashPS;
@@ -22,9 +23,13 @@ public class Weapon : MonoBehaviour
 
     private bool _canShoot = true;
 
+    private void OnEnable()
+    {
+        _canShoot = true;
+    }
+
     private void Update()
     {
-        Debug.DrawRay(_fpCamera.transform.position, _fpCamera.transform.forward * _range, Color.green);
         if(Input.GetMouseButtonDown(0) && _canShoot == true)
         {
             StartCoroutine(Shoot());
@@ -35,9 +40,9 @@ public class Weapon : MonoBehaviour
     {
         _canShoot = false;
 
-        if (_ammo.GetCurrentAmmo() != 0)
+        if (_ammoSlot.GetCurrentAmmo(_ammoType) > 0)
         {
-            _ammo.DecreaseCurrentAmmo();
+            _ammoSlot.DecreaseCurrentAmmo(_ammoType);
             PlayMuzzleFlash();
             ProcessRaycast();
         }
@@ -56,7 +61,7 @@ public class Weapon : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(_fpCamera.transform.position, _fpCamera.transform.forward, out hit, _range))
+        if (Physics.Raycast(_fpsCamera.transform.position, _fpsCamera.transform.forward, out hit, _range))
         {
             CreateHitImpact(hit);
             EnemyHealth target = hit.collider.GetComponent<EnemyHealth>();
@@ -77,7 +82,6 @@ public class Weapon : MonoBehaviour
         if(!hit.collider.GetComponent<EnemyHealth>())
         {
             GameObject impactFX = Instantiate(_hitImpactPS, hit.point, Quaternion.LookRotation(hit.normal));
-            
             Destroy(impactFX, _delayToDelete);
         }
     }
