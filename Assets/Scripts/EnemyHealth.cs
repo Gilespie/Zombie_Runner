@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -20,7 +22,9 @@ public class EnemyHealth : MonoBehaviour
     {
         if (_currentHitPoints == 0) return;
 
+
         BroadcastMessage("OnDamageTaken");
+        GetComponent<Animator>().SetTrigger("Hit");
         _currentHitPoints -= Mathf.Abs(amount);
 
         if(_currentHitPoints <= 0)
@@ -35,5 +39,7 @@ public class EnemyHealth : MonoBehaviour
 
         _isDead = true;
         GetComponent<Animator>().SetTrigger("Die");
+        GetComponent<CapsuleCollider>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;
     }
 }

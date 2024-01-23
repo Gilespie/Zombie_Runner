@@ -5,7 +5,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private float _damage = 30f;
     private PlayerHealth _target;
 
-    void Start()
+    private void Start()
     {
         _target = FindObjectOfType<PlayerHealth>();
     }

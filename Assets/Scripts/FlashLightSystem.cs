@@ -1,6 +1,4 @@
-
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 
 public class FlashLightSystem : MonoBehaviour
 {
